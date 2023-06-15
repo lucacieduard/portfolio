@@ -11,7 +11,6 @@ export const Footer = () => {
     <footer className={styles.container}>
       <div className={styles.logoContainer}>
         <FontAwesomeIcon icon={faCodeFork} fontSize={21} />
-        <p>logo</p>
       </div>
       <div className={styles.socialContainer}>
         <Link href="">
