@@ -1,0 +1,19 @@
+.container {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.socialContainer {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
