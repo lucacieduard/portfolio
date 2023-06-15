@@ -1,0 +1,20 @@
+.changeTheme {
+  width: 50px;
+  border: 1px solid;
+  height: 23px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 5px;
+  position: relative;
+}
+
+.ball {
+  width: 17px;
+  height: 16px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 2s;
+}
