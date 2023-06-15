@@ -16,12 +16,16 @@ a {
 
 .light {
   background-color: #f7f3f3;
-  color: black;
+  color: #172135;
 }
 
-.black {
-  background-color: black;
+.dark {
+  background-color: #172135;
   color: white;
+}
+
+.theme {
+  transition: all 1s ease;
 }
 .container {
   padding: 0 28px;
