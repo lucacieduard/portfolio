@@ -20,7 +20,7 @@ a {
 }
 
 .dark {
-  background-color: #172135;
+  background-color: #111827;
   color: white;
 }
 
@@ -32,5 +32,4 @@ a {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
