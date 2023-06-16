@@ -1,0 +1,23 @@
+.heroTitle {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 92px;
+}
+
+.heroDescription {
+  text-align: justify;
+  color: #abadb2;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+  margin: 24px 0;
+}
+
+.ticketContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
