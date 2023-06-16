@@ -7,7 +7,7 @@ import { useState, useContext } from "react";
 import { ThemeContext } from "@/app/context/ThemeContext";
 import { ToggleTheme } from "../toggleTheme/ToggleTheme";
 export const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(true);
   const toggleHandler = () => setToggleMenu((prev) => !prev);
   const { toggle, mode } = useContext(ThemeContext);
   return (
@@ -23,7 +23,7 @@ export const Navbar = () => {
         <ul
           className={`${styles.list} ${toggleMenu ? styles.hide : ""}`}
           style={{
-            backgroundColor: `${mode === "light" ? "#f7f3f3" : "#172135"}`,
+            backgroundColor: `${mode === "light" ? "#f7f3f3" : "#111827"}`,
           }}
         >
           <li>Home</li>
