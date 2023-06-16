@@ -6,7 +6,6 @@ import { ThemeContext } from "@/app/context/ThemeContext";
 
 export const Ticket = (props) => {
   const context = useContext(ThemeContext);
-  console.log(context);
 
   let color;
 
