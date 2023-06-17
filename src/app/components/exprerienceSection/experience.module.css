@@ -1,0 +1,61 @@
+.container {
+  margin-top: 92px;
+  margin-bottom: 92px;
+}
+
+.sectionTitle {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 42px;
+}
+
+.experienceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.companyContainer {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.companyLogo {
+  padding: 25px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.dates {
+  font-size: 16px;
+  color: #6b7280;
+  font-weight: 500;
+}
+.descriptionHeader {
+  margin-bottom: 38px;
+}
+
+.list {
+  display: flex;
+  gap: 38px;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.arrow {
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.content {
+  font-size: 16px;
+  font-weight: 400;
+}
