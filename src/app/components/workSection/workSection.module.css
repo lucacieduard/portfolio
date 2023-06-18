@@ -1,0 +1,41 @@
+.container {
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 42px;
+}
+
+.porject-title {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.socialContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tehnology,
+.social {
+  display: flex;
+  list-style-type: none;
+  gap: 10px;
+}
+
+.description {
+  margin-top: 24px;
+}
