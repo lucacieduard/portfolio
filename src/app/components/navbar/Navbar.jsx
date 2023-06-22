@@ -6,12 +6,19 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useState, useContext } from "react";
 import { ThemeContext } from "@/app/context/ThemeContext";
 import { ToggleTheme } from "../toggleTheme/ToggleTheme";
+import Link from "next/link";
 export const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(true);
   const toggleHandler = () => setToggleMenu((prev) => !prev);
   const { toggle, mode } = useContext(ThemeContext);
   return (
-    <nav className={styles.container}>
+    <nav
+      className={styles.container}
+      style={{
+        backgroundColor: `${mode === "light" ? "#f7f3f3" : "#111827"}`,
+        transition: "all 1s ",
+      }}
+    >
       <div className={styles.logoContainer}>
         <FontAwesomeIcon icon={faCodeFork} fontSize={21} />
       </div>
@@ -26,9 +33,34 @@ export const Navbar = () => {
             backgroundColor: `${mode === "light" ? "#f7f3f3" : "#111827"}`,
           }}
         >
-          <li>Home</li>
-          <li>About</li>
-          <li>Work</li>
+          <Link
+            href="#aboutSection"
+            onClick={toggleHandler}
+            style={{ textDecoration: "none" }}
+          >
+            <li>About</li>
+          </Link>{" "}
+          <Link
+            href="#experienceSection"
+            onClick={toggleHandler}
+            style={{ textDecoration: "none" }}
+          >
+            <li>Experience</li>
+          </Link>
+          <Link
+            href="#workSection"
+            onClick={toggleHandler}
+            style={{ textDecoration: "none" }}
+          >
+            <li>Work</li>
+          </Link>
+          <Link
+            href="#contactSection"
+            onClick={toggleHandler}
+            style={{ textDecoration: "none" }}
+          >
+            <li>Contact</li>
+          </Link>
         </ul>
         <FontAwesomeIcon icon={faGithub} />
         <ToggleTheme />

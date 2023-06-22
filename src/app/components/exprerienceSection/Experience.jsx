@@ -44,16 +44,16 @@ export const ExperienceSection = () => {
       ? {
           backgroundColor: "#172135",
           borderRadius: "5px",
-          transition: "0.5s all",
+          transition: "all 1s",
         }
       : {
           backgroundColor: "#E3E8ED",
           borderRadius: "5px",
-          transition: "0.5s all linear",
+          transition: "all 1s",
         };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="experienceSection">
       <h2 className={styles.sectionTitle}>My experience</h2>
       <div className={styles.experienceContainer}>
         <div className={styles.companyContainer}>

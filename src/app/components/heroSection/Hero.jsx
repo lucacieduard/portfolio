@@ -12,7 +12,7 @@ import {
 
 export const Hero = () => {
   return (
-    <section className={styles.heroContainer}>
+    <section className={styles.heroContainer} id="aboutSection">
       <h1 className={styles.heroTitle}>
         Hello I&apos;m <br />
         Eduard Lucaci

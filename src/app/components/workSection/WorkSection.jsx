@@ -8,7 +8,7 @@ import { faCss3, faHtml5, faReact } from "@fortawesome/free-brands-svg-icons";
 
 const WorkSection = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="workSection">
       <h2 className={styles.title}>
         My latest <span style={{ color: "#2563EB" }}>work</span>
       </h2>
