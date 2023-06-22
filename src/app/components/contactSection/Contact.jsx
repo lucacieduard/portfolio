@@ -7,11 +7,12 @@ export const Contact = () => {
   const { mode, toggle } = useContext(ThemeContext);
   return (
     <section
+      id="contactSection"
       className={`${styles.container}`}
       style={
         mode === "dark"
-          ? { backgroundColor: "#172135" }
-          : { backgroundColor: "#E3E8ED" }
+          ? { backgroundColor: "#172135", transition: "all 1s" }
+          : { backgroundColor: "#E3E8ED", transition: "all 1s" }
       }
     >
       <p>Ready to start your next project?</p>
