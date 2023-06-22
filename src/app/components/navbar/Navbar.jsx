@@ -1,7 +1,7 @@
 "use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./navbar.module.css";
-import { faBars, faCodeFork } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faCodeFork, faX } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useState, useContext } from "react";
 import { ThemeContext } from "@/app/context/ThemeContext";
@@ -24,7 +24,7 @@ export const Navbar = () => {
       </div>
       <div className={styles.menuListContainer}>
         <button className={styles.toggleButton} onClick={toggleHandler}>
-          <FontAwesomeIcon icon={faBars} />
+          <FontAwesomeIcon icon={toggleMenu === true ? faBars : faX} />
         </button>
 
         <ul
