@@ -1,0 +1,12 @@
+.container {
+  padding: 2.62rem 1rem;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  border-radius: 25px;
+  margin: 3rem auto;
+}
+
+.container p:nth-of-type(2) {
+  color: #2563eb;
+}
