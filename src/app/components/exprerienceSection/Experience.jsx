@@ -1,9 +1,10 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import styles from "./experience.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap, faSun } from "@fortawesome/free-solid-svg-icons";
 import { ThemeContext } from "@/app/context/ThemeContext";
+import { useInView, motion } from "framer-motion";
 
 const content = [
   {
@@ -15,9 +16,9 @@ const content = [
     subCompany: "Generatia Tech",
     dates: "10.2022 - 02.2023",
     sentences: [
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
+      "Lorems ipsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
+      "Lorem isapsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
+      "Lorem iaxpsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
     ],
   },
   {
@@ -29,8 +30,8 @@ const content = [
     subCompany: "Inoesy",
     dates: "10.2023 - 12.2023",
     sentences: [
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
+      "Lorem asdipsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
+      "Lorem ipsum dxxaxolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
     ],
   },
 ];
@@ -38,6 +39,8 @@ const content = [
 export const ExperienceSection = () => {
   const { toggle, mode } = useContext(ThemeContext);
   const [activeInfo, setActiveInfo] = useState(1);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   const active =
     mode === "dark"
@@ -53,7 +56,17 @@ export const ExperienceSection = () => {
         };
 
   return (
-    <section className={styles.container} id="experienceSection">
+    <motion.section
+      className={styles.container}
+      id="experienceSection"
+      ref={ref}
+      style={{
+        transform: isInView ? "translateX(0px)" : "translateX(-200px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      }}
+      viewport={{ once: true, amount: 0.5 }}
+    >
       <h2 className={styles.sectionTitle}>My experience</h2>
       <div className={styles.experienceContainer}>
         <div className={styles.companyContainer}>
@@ -98,16 +111,22 @@ export const ExperienceSection = () => {
             <ul className={styles.list}>
               {content[activeInfo].sentences.map((prop) => {
                 return (
-                  <li className={styles.listItem} key={prop}>
+                  <motion.li
+                    className={styles.listItem}
+                    key={prop}
+                    initial={{ opacity: 0, transform: "translateX(-50px)" }}
+                    whileInView={{ opacity: 1, transform: "translateX(0)" }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <span className={styles.arrow}>&gt; </span>
                     <span>{prop}</span>
-                  </li>
+                  </motion.li>
                 );
               })}
             </ul>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

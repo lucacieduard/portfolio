@@ -11,6 +11,7 @@ export const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(true);
   const toggleHandler = () => setToggleMenu((prev) => !prev);
   const { toggle, mode } = useContext(ThemeContext);
+
   return (
     <nav
       className={styles.container}
