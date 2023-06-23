@@ -5,33 +5,25 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-export const ImgCarouse = () => {
+export const ImgCarouse = (props) => {
   return (
-    <Carousel swipeable={true}>
-      <div style={{ minHeight: "200px" }}>
-        <Image
-          src="/meTeo.png"
-          alt=""
-          fill={true}
-          style={{ objectFit: "contain" }}
-        />
-      </div>
-      <div style={{ minHeight: "200px" }}>
-        <Image
-          src="/meTeo.png"
-          alt=""
-          fill={true}
-          style={{ objectFit: "contain" }}
-        />
-      </div>
-      <div style={{ minHeight: "200px" }}>
-        <Image
-          src="/meTeo.png"
-          alt=""
-          fill={true}
-          style={{ objectFit: "contain" }}
-        />
-      </div>
+    <Carousel swipeable={true} showThumbs={false}>
+      {props.images.map((image, index) => (
+        <div
+          style={{
+            minHeight: "200px",
+            position: "relative",
+          }}
+          key={index}
+        >
+          <Image
+            src={image}
+            alt=""
+            fill={true}
+            style={{ objectFit: "contain" }}
+          />
+        </div>
+      ))}
     </Carousel>
   );
 };
