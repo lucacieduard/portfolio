@@ -17,7 +17,7 @@
 }
 
 .logo {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .list {
   position: absolute;
@@ -55,7 +55,27 @@
 }
 
 .hide {
-  right: 500px;
+  right: 100%;
   transition: all 1s;
   overflow-x: none;
+}
+
+@media (min-width: 716px) {
+  .list {
+    position: inherit;
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .menuListContainer {
+    flex-direction: row;
+  }
+
+  .toggleButton {
+    display: none;
+  }
 }

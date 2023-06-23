@@ -63,7 +63,9 @@ export const Navbar = () => {
             <li>Contact</li>
           </Link>
         </ul>
-        <FontAwesomeIcon icon={faGithub} />
+        <Link href="https://github.com/lucacieduard" target="_blank">
+          <FontAwesomeIcon icon={faGithub} />
+        </Link>
         <ToggleTheme />
       </div>
     </nav>
