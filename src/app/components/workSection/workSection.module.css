@@ -11,17 +11,22 @@
 .project {
   display: flex;
   flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .title {
   font-weight: 700;
   font-size: 30px;
-  margin-bottom: 42px;
+  margin-bottom: 32px;
 }
 
-.porject-title {
+.projectTitle {
   font-weight: 700;
   font-size: 24px;
+  margin-bottom: 1.2rem;
 }
 
 .socialContainer {
@@ -35,8 +40,17 @@
   display: flex;
   list-style-type: none;
   gap: 10px;
+  margin-top: 20px;
 }
 
 .description {
   margin-top: 24px;
+}
+
+@media (min-width: 716px) {
+  .project {
+    margin: 0 auto;
+    min-width: 550px;
+    padding: 1rem;
+  }
 }
