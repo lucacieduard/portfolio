@@ -16,9 +16,8 @@ const content = [
     subCompany: "Generatia Tech",
     dates: "10.2022 - 02.2023",
     sentences: [
-      "Lorems ipsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
-      "Lorem isapsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
-      "Lorem iaxpsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
+      "After completing a 4-month JavaScript course, I have gained practical experience in applying JavaScript fundamentals and utilizing tools like React, Express, and MongoDB.",
+      " As a participant, I have learned to effectively communicate, work in teams, demonstrate autonomy and proactivity, and adopt a solution-oriented mindset through the support of the Generatia Tech community.",
     ],
   },
   {
@@ -67,7 +66,7 @@ export const ExperienceSection = () => {
       }}
       viewport={{ once: true, amount: 0.5 }}
     >
-      <h2 className={styles.sectionTitle}>My experience</h2>
+      <h2 className={styles.sectionTitle}>Courses</h2>
       <div className={styles.experienceContainer}>
         <div className={styles.companyContainer}>
           {content.map((item) => {

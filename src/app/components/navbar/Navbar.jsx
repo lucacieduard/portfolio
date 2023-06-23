@@ -46,7 +46,7 @@ export const Navbar = () => {
             onClick={toggleHandler}
             style={{ textDecoration: "none" }}
           >
-            <li>Experience</li>
+            <li>Courses</li>
           </Link>
           <Link
             href="#workSection"
