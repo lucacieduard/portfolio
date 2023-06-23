@@ -58,3 +58,55 @@
   font-size: 16px;
   font-weight: 400;
 }
+
+@media (min-width: 716px) {
+  .experienceContainer {
+    flex-direction: row;
+  }
+  .companyContainer {
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .descripiptionContainer {
+    flex: 1;
+  }
+  .hide {
+    display: block;
+  }
+
+  .catContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .companyInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .companyName {
+    font-size: 1rem;
+  }
+
+  .companyPosition {
+    font-size: 0.8rem;
+    color: #6b7280;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+  .dates {
+    font-size: 0.8rem;
+  }
+  .listItem {
+    font-size: 1rem;
+    text-align: start;
+  }
+
+  .arrow {
+    font-size: 18px;
+  }
+}

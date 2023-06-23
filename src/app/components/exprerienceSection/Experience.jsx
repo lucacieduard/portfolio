@@ -71,13 +71,13 @@ export const ExperienceSection = () => {
         <div className={styles.companyContainer}>
           {content.map((item) => {
             return (
-              <div key={item.id} onClick={() => setActiveInfo(item.id)}>
-                <div
-                  className={`${styles.companyLogo}`}
-                  style={activeInfo === item.id ? active : {}}
-                >
-                  {item.icon}
-                </div>
+              <div
+                key={item.id}
+                onClick={() => setActiveInfo(item.id)}
+                className={styles.catContainer}
+                style={activeInfo === item.id ? active : {}}
+              >
+                <div className={`${styles.companyLogo}`}>{item.icon}</div>
                 <div className={`${styles.companyInfo}  ${styles.hide}`}>
                   <span className={`${styles.companyName}`}>
                     {item.companyName}
