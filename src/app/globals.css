@@ -29,8 +29,14 @@ a {
   transition: all 1s ease;
 }
 .container {
-  padding: 0 28px;
+  padding: 0 1.75rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+@media (min-width: 716px) {
+  .container {
+    padding: 0 2rem;
+  }
 }
