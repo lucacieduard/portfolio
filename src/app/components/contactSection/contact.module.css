@@ -10,3 +10,17 @@
 .container p:nth-of-type(2) {
   color: #2563eb;
 }
+
+.socialContainer {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (min-width: 716px) {
+  .container {
+    font-size: 1.6rem;
+  }
+}
