@@ -1,39 +1,10 @@
 "use client";
 import React, { useContext, useRef, useState } from "react";
 import styles from "./experience.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGraduationCap, faSun } from "@fortawesome/free-solid-svg-icons";
 import { ThemeContext } from "@/app/context/ThemeContext";
 import { useInView, motion } from "framer-motion";
-
-const content = [
-  {
-    id: 0,
-    icon: <FontAwesomeIcon icon={faGraduationCap} />,
-    companyName: "Digital Nation",
-    companyPosition: "Full Stack JavaScript Course",
-    position: "Explorer",
-    subCompany: "Generatia Tech",
-    dates: "10.2022 - 02.2023",
-    sentences: [
-      "After completing a 4-month JavaScript course, I have gained practical experience in applying JavaScript fundamentals and utilizing tools like React, Express, and MongoDB.",
-      " As a participant, I have learned to effectively communicate, work in teams, demonstrate autonomy and proactivity, and adopt a solution-oriented mindset through the support of the Generatia Tech community.",
-    ],
-  },
-  {
-    id: 1,
-    icon: <FontAwesomeIcon icon={faSun} />,
-    companyName: "Digital Nation",
-    companyPosition: "Full Stack JavaScript Course",
-    position: "Explorer",
-    subCompany: "Inoesy",
-    dates: "10.2023 - 12.2023",
-    sentences: [
-      "Lorem asdipsum dolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
-      "Lorem ipsum dxxaxolor sit, amet consectetur adipisicing elit. Eum excepturi impedit itaque! Incidunt, esse soluta veniam, libero",
-    ],
-  },
-];
+import content from "@/app/utils/experienceContent";
+import Link from "next/link";
 
 export const ExperienceSection = () => {
   const { toggle, mode } = useContext(ThemeContext);
@@ -62,7 +33,7 @@ export const ExperienceSection = () => {
       style={{
         transform: isInView ? "translateX(0px)" : "translateX(-200px)",
         opacity: isInView ? 1 : 0,
-        transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
+        transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1)",
       }}
       viewport={{ once: true, amount: 0.8 }}
     >
@@ -93,7 +64,7 @@ export const ExperienceSection = () => {
         <div className={styles.descripiptionContainer}>
           <div className={styles.descriptionHeader}>
             <p className={styles.title}>
-              {content[activeInfo].position} at{" "}
+              {content[activeInfo].position}{" "}
               <span
                 style={{
                   color: "#2563EB",
@@ -108,20 +79,74 @@ export const ExperienceSection = () => {
           </div>
           <div className={styles.descriptionContent}>
             <ul className={styles.list}>
-              {content[activeInfo].sentences.map((prop) => {
-                return (
-                  <motion.li
-                    className={styles.listItem}
-                    key={prop}
-                    initial={{ opacity: 0, transform: "translateX(-50px)" }}
-                    whileInView={{ opacity: 1, transform: "translateX(0)" }}
-                    transition={{ duration: 0.5 }}
-                  >
+              {content[activeInfo].sentences.length > 0 &&
+                content[activeInfo].sentences.map((prop) => {
+                  return (
+                    <motion.li
+                      className={styles.listItem}
+                      key={prop}
+                      initial={{ opacity: 0, transform: "translateX(-50px)" }}
+                      whileInView={{ opacity: 1, transform: "translateX(0)" }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <span className={styles.arrow}>&gt; </span>
+                      <span>{prop}</span>
+                    </motion.li>
+                  );
+                })}
+
+              {content[activeInfo].sentences.length === 0 && (
+                <>
+                  {" "}
+                  <motion.li>
                     <span className={styles.arrow}>&gt; </span>
-                    <span>{prop}</span>
+                    <span>
+                      At the beginning of my journey I started with the basics
+                      of HTML, CSS and JAVASCRIPT doing the following courses:{" "}
+                      <Link
+                        target="_blank"
+                        href={content[activeInfo].course[0].link}
+                      >
+                        {content[activeInfo].course[0].name}
+                      </Link>
+                      {", "}
+                      <Link
+                        target="_blank"
+                        href={content[activeInfo].course[1].link}
+                      >
+                        {content[activeInfo].course[1].name}
+                      </Link>
+                    </span>
                   </motion.li>
-                );
-              })}
+                  <motion.li>
+                    <span className={styles.arrow}>&gt; </span>
+                    <span>
+                      To learn React, I followed the following courses:{" "}
+                      <Link
+                        target="_blank"
+                        href={content[activeInfo].course[2].link}
+                      >
+                        {content[activeInfo].course[2].name}
+                      </Link>
+                      {", "}
+                      <Link
+                        target="_blank"
+                        href={content[activeInfo].course[3].link}
+                      >
+                        {content[activeInfo].course[3].name}
+                      </Link>
+                    </span>
+                  </motion.li>
+                  <motion.li>
+                    <span className={styles.arrow}>&gt; </span>
+                    <span>
+                      Now I deepen what I learned and put it into practice
+                      through projects taking everything to another level with
+                      NextJs & TypeScript
+                    </span>
+                  </motion.li>
+                </>
+              )}
             </ul>
           </div>
         </div>
