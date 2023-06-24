@@ -98,7 +98,11 @@ export const ExperienceSection = () => {
               {content[activeInfo].sentences.length === 0 && (
                 <>
                   {" "}
-                  <motion.li>
+                  <motion.li
+                    initial={{ opacity: 0, transform: "translateX(-50px)" }}
+                    whileInView={{ opacity: 1, transform: "translateX(0)" }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <span className={styles.arrow}>&gt; </span>
                     <span>
                       At the beginning of my journey I started with the basics
@@ -118,10 +122,14 @@ export const ExperienceSection = () => {
                       </Link>
                     </span>
                   </motion.li>
-                  <motion.li>
+                  <motion.li
+                    initial={{ opacity: 0, transform: "translateX(-50px)" }}
+                    whileInView={{ opacity: 1, transform: "translateX(0)" }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <span className={styles.arrow}>&gt; </span>
                     <span>
-                      To learn React, I followed the following courses:{" "}
+                      To learn React, I followed the courses:{" "}
                       <Link
                         target="_blank"
                         href={content[activeInfo].course[2].link}
@@ -137,7 +145,11 @@ export const ExperienceSection = () => {
                       </Link>
                     </span>
                   </motion.li>
-                  <motion.li>
+                  <motion.li
+                    initial={{ opacity: 0, transform: "translateX(-50px)" }}
+                    whileInView={{ opacity: 1, transform: "translateX(0)" }}
+                    transition={{ duration: 0.5 }}
+                  >
                     <span className={styles.arrow}>&gt; </span>
                     <span>
                       Now I deepen what I learned and put it into practice
