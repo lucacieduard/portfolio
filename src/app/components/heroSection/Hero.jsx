@@ -24,7 +24,7 @@ export const Hero = () => {
       style={{
         transform: isInView ? "translateX(0px)" : "translateX(200px)",
         opacity: isInView ? 1 : 0,
-        transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
+        transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) ",
       }}
       viewport={{ once: true, amount: 0.8 }}
     >
