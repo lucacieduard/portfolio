@@ -12,7 +12,7 @@ export const ToggleTheme = () => {
       <span
         className={styles.ball}
         style={
-          mode === "light" ? { left: 5 } : { right: 5, background: "white" }
+          mode === "light" ? { right: 5 } : { left: 5, background: "white" }
         }
       ></span>
       <FontAwesomeIcon icon={faMoon} onClick={toggle} />
