@@ -11,7 +11,7 @@ const workContent = [
   {
     id: 2,
     title: "Inoesy Project V1",
-    images: ["/grafice1.png", "/grafice2.png", "/grafice3.png"],
+    images: ["/grafice1.webp", "/grafice2.webp", "/grafice3.webp"],
     tehnologies: [
       { icon: <FontAwesomeIcon icon={faHtml5} />, name: "HTML" },
       { icon: <FontAwesomeIcon icon={faCss3} />, name: "CSS" },
@@ -25,7 +25,7 @@ const workContent = [
   {
     id: 1,
     title: "meTEO, Weather APP",
-    images: ["/meTeo.png", "/meteo2.png", "/meteo3.png"],
+    images: ["/meTeo.webp", "/meteo2.webp", "/meteo3.webp"],
     tehnologies: [
       { icon: <FontAwesomeIcon icon={faHtml5} />, name: "HTML" },
       { icon: <FontAwesomeIcon icon={faCss3} />, name: "CSS" },
