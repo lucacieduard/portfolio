@@ -6,6 +6,9 @@ import { ImgCarouse } from "../imgCarousel/ImgCarouse";
 import { Ticket } from "../ticket/Ticket";
 import workContent from "@/app/utils/workContent";
 import { ThemeContext } from "@/app/context/ThemeContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 const WorkSection = () => {
   const { toggle, mode } = useContext(ThemeContext);
@@ -43,6 +46,18 @@ const WorkSection = () => {
                 </ul>
               </div>
               <p className={styles.description}>{project.description}</p>
+              <div className={styles.buttons}>
+                <Link href={project.liveLink} target="_blank">
+                  <button className={styles.button}>
+                    Live <FontAwesomeIcon icon={faArrowRight} />
+                  </button>
+                </Link>
+                <Link href={project.githubLink} target="_blank">
+                  <button className={styles.button}>
+                    Github <FontAwesomeIcon icon={faArrowRight} />
+                  </button>
+                </Link>
+              </div>
             </div>
           );
         })}

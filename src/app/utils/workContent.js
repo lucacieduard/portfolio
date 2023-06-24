@@ -18,6 +18,8 @@ const workContent = [
       { icon: <FontAwesomeIcon icon={faReact} />, name: "React" },
     ],
     description: "descrierea mea",
+    liveLink: "https://weather-app.eduardlucaci.ro/",
+    githubLink: "https://github.com/lucacieduard/weather-app",
   },
   {
     id: 2,
@@ -30,6 +32,8 @@ const workContent = [
       { icon: <FontAwesomeIcon icon={faReact} />, name: "React" },
     ],
     description: "descrierea mea",
+    liveLink: "https://weather-app.eduardlucaci.ro/",
+    githubLink: "https://github.com/lucacieduard/weather-app",
   },
 ];
 
