@@ -13,10 +13,10 @@ export const Footer = () => {
         <FontAwesomeIcon icon={faCodeFork} fontSize={21} />
       </div>
       <div className={styles.socialContainer}>
-        <Link href="">
+        <Link href="https://www.linkedin.com/in/eduard-lucaci/">
           <FontAwesomeIcon icon={faLinkedin} fontSize={18} />
         </Link>
-        <Link href="">
+        <Link href="https://github.com/lucacieduard/">
           <FontAwesomeIcon icon={faGithub} fontSize={18} />
         </Link>
       </div>
