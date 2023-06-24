@@ -5,6 +5,7 @@
   font-weight: 700;
   border-radius: 25px;
   margin: 5rem auto;
+  width: fit-content;
 }
 
 .container p:nth-of-type(2) {
