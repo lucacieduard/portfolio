@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <div className="container">
             <Navbar />
-            {children}
+            <div style={{ overflowX: "hidden" }}>{children}</div>
             <Footer />
           </div>
         </ThemeProvider>
