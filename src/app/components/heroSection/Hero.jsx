@@ -1,7 +1,10 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import styles from "./hero.module.css";
 import { Ticket } from "../ticket/Ticket";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useInView, motion } from "framer-motion";
+
 import {
   faCss3,
   faHtml5,
@@ -11,8 +14,20 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 export const Hero = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <section className={styles.heroContainer} id="aboutSection">
+    <motion.section
+      className={styles.heroContainer}
+      id="aboutSection"
+      ref={ref}
+      style={{
+        transform: isInView ? "translateX(0px)" : "translateX(200px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
+      }}
+      viewport={{ once: true, amount: 0.8 }}
+    >
       <h1 className={styles.heroTitle}>
         Hello I&apos;m <br />
         Eduard Lucaci
@@ -37,6 +52,6 @@ export const Hero = () => {
         <Ticket name="ExpressJs" />
         <Ticket name="MongoDB" />
       </div>
-    </section>
+    </motion.section>
   );
 };

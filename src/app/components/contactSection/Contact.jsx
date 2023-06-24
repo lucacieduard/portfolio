@@ -1,10 +1,12 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import styles from "./contact.module.css";
 import { ThemeContext } from "@/app/context/ThemeContext";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useInView, motion } from "framer-motion";
+
 import {
   faFacebook,
   faGithub,
@@ -13,15 +15,20 @@ import {
 import { faEnvelope, faMailReply } from "@fortawesome/free-solid-svg-icons";
 export const Contact = () => {
   const { mode, toggle } = useContext(ThemeContext);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <section
+    <motion.section
+      ref={ref}
+      style={{
+        transform: isInView ? "translateX(0px)" : "translateX(-200px)",
+        opacity: isInView ? 1 : 0,
+        transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
+        backgroundColor: `${mode === "dark" ? "#172135" : "#E3E8ED"}`,
+      }}
+      viewport={{ once: true, amount: 0.5 }}
       id="contactSection"
       className={`${styles.container}`}
-      style={
-        mode === "dark"
-          ? { backgroundColor: "#172135", transition: "all 1s" }
-          : { backgroundColor: "#E3E8ED", transition: "all 1s" }
-      }
     >
       <p>Ready to start your next project?</p>
       <p>Get in touch me!</p>
@@ -39,6 +46,6 @@ export const Contact = () => {
           <FontAwesomeIcon icon={faEnvelope} />
         </Link>
       </div>
-    </section>
+    </motion.section>
   );
 };

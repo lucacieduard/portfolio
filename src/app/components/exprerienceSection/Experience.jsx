@@ -39,7 +39,7 @@ export const ExperienceSection = () => {
   const { toggle, mode } = useContext(ThemeContext);
   const [activeInfo, setActiveInfo] = useState(1);
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   const active =
     mode === "dark"
@@ -62,9 +62,9 @@ export const ExperienceSection = () => {
       style={{
         transform: isInView ? "translateX(0px)" : "translateX(-200px)",
         opacity: isInView ? 1 : 0,
-        transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 1s",
       }}
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.8 }}
     >
       <h2 className={styles.sectionTitle}>Courses</h2>
       <div className={styles.experienceContainer}>
