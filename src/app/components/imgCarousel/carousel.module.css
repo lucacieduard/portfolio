@@ -1,0 +1,31 @@
+.imgContainer {
+  min-height: 200px;
+  position: relative;
+}
+
+@media (min-width: 600px) {
+  .imgContainer {
+    min-height: 250px;
+  }
+}
+
+@media (min-width: 714px) {
+  .imgContainer {
+    min-height: 220px;
+  }
+}
+@media (min-width: 1024px) {
+  .imgContainer {
+    min-height: 190px;
+  }
+}
+@media (min-width: 1200px) {
+  .imgContainer {
+    min-height: 210px;
+  }
+}
+@media (min-width: 1300px) {
+  .imgContainer {
+    min-height: 230px;
+  }
+}

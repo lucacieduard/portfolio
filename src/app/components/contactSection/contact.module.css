@@ -4,7 +4,7 @@
   font-size: 1.35rem;
   font-weight: 700;
   border-radius: 25px;
-  margin: 3rem auto;
+  margin: 5rem auto;
 }
 
 .container p:nth-of-type(2) {
@@ -22,5 +22,15 @@
 @media (min-width: 716px) {
   .container {
     font-size: 1.6rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 1250px) {
+  .container {
+    font-size: 1.9rem;
   }
 }

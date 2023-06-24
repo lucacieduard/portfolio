@@ -1,13 +1,15 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 999999;
+}
+
 .container {
-  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  right: 28px;
-  left: 28px;
-  z-index: 999999;
   text-decoration: none;
+  height: 60px;
 }
 
 .logoContainer {
@@ -77,5 +79,10 @@
 
   .toggleButton {
     display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav {
   }
 }

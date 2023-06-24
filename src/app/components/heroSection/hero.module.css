@@ -1,7 +1,8 @@
 .heroTitle {
   font-size: 30px;
   text-align: center;
-  margin-top: 92px;
+  margin-top: 52px;
+  padding-top: 10px;
 }
 
 .heroDescription {
@@ -29,5 +30,22 @@
   .heroDescription {
     font-size: 1.4rem;
     margin: 1.5rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroTitle {
+    font-size: 2.6rem;
+  }
+  .heroContainer {
+    padding: 0rem 4rem;
+  }
+}
+@media (min-width: 1250px) {
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+  .heroContainer {
+    padding: 0rem 5.5rem;
   }
 }
