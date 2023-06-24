@@ -14,59 +14,61 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={styles.container}
+      className={styles.nav}
       style={{
         backgroundColor: `${mode === "light" ? "#f7f3f3" : "#111827"}`,
         transition: "all 1s ",
       }}
     >
-      <div className={styles.logoContainer}>
-        <FontAwesomeIcon icon={faCodeFork} fontSize={21} />
-      </div>
-      <div className={styles.menuListContainer}>
-        <button className={styles.toggleButton} onClick={toggleHandler}>
-          <FontAwesomeIcon icon={toggleMenu === true ? faBars : faX} />
-        </button>
+      <div className={styles.container}>
+        <div className={styles.logoContainer}>
+          <FontAwesomeIcon icon={faCodeFork} fontSize={21} />
+        </div>
+        <div className={styles.menuListContainer}>
+          <button className={styles.toggleButton} onClick={toggleHandler}>
+            <FontAwesomeIcon icon={toggleMenu === true ? faBars : faX} />
+          </button>
 
-        <ul
-          className={`${styles.list} ${toggleMenu ? styles.hide : ""}`}
-          style={{
-            backgroundColor: `${mode === "light" ? "#f7f3f3" : "#111827"}`,
-          }}
-        >
-          <Link
-            href="#aboutSection"
-            onClick={toggleHandler}
-            style={{ textDecoration: "none" }}
+          <ul
+            className={`${styles.list} ${toggleMenu ? styles.hide : ""}`}
+            style={{
+              backgroundColor: `${mode === "light" ? "#f7f3f3" : "#111827"}`,
+            }}
           >
-            <li>About</li>
-          </Link>{" "}
-          <Link
-            href="#experienceSection"
-            onClick={toggleHandler}
-            style={{ textDecoration: "none" }}
-          >
-            <li>Courses</li>
+            <Link
+              href="#aboutSection"
+              onClick={toggleHandler}
+              style={{ textDecoration: "none" }}
+            >
+              <li>About</li>
+            </Link>{" "}
+            <Link
+              href="#experienceSection"
+              onClick={toggleHandler}
+              style={{ textDecoration: "none" }}
+            >
+              <li>Courses</li>
+            </Link>
+            <Link
+              href="#workSection"
+              onClick={toggleHandler}
+              style={{ textDecoration: "none" }}
+            >
+              <li>Work</li>
+            </Link>
+            <Link
+              href="#contactSection"
+              onClick={toggleHandler}
+              style={{ textDecoration: "none" }}
+            >
+              <li>Contact</li>
+            </Link>
+          </ul>
+          <Link href="https://github.com/lucacieduard" target="_blank">
+            <FontAwesomeIcon icon={faGithub} />
           </Link>
-          <Link
-            href="#workSection"
-            onClick={toggleHandler}
-            style={{ textDecoration: "none" }}
-          >
-            <li>Work</li>
-          </Link>
-          <Link
-            href="#contactSection"
-            onClick={toggleHandler}
-            style={{ textDecoration: "none" }}
-          >
-            <li>Contact</li>
-          </Link>
-        </ul>
-        <Link href="https://github.com/lucacieduard" target="_blank">
-          <FontAwesomeIcon icon={faGithub} />
-        </Link>
-        <ToggleTheme />
+          <ToggleTheme />
+        </div>
       </div>
     </nav>
   );
