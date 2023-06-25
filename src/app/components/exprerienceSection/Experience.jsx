@@ -86,7 +86,7 @@ export const ExperienceSection = () => {
                       className={styles.listItem}
                       key={prop}
                       initial={{ opacity: 0, transform: "translateX(-50px)" }}
-                      whileInView={{ opacity: 1, transform: "translateX(0)" }}
+                      whileInView={{ opacity: 1, transform: "translateX(0px)" }}
                       transition={{ duration: 0.5 }}
                     >
                       <span className={styles.arrow}>&gt; </span>
@@ -100,7 +100,7 @@ export const ExperienceSection = () => {
                   {" "}
                   <motion.li
                     initial={{ opacity: 0, transform: "translateX(-50px)" }}
-                    whileInView={{ opacity: 1, transform: "translateX(0)" }}
+                    whileInView={{ opacity: 1, transform: "translateX(0px)" }}
                     transition={{ duration: 0.5 }}
                   >
                     <span className={styles.arrow}>&gt; </span>
@@ -124,7 +124,7 @@ export const ExperienceSection = () => {
                   </motion.li>
                   <motion.li
                     initial={{ opacity: 0, transform: "translateX(-50px)" }}
-                    whileInView={{ opacity: 1, transform: "translateX(0)" }}
+                    whileInView={{ opacity: 1, transform: "translateX(0px)" }}
                     transition={{ duration: 0.5 }}
                   >
                     <span className={styles.arrow}>&gt; </span>
@@ -147,7 +147,7 @@ export const ExperienceSection = () => {
                   </motion.li>
                   <motion.li
                     initial={{ opacity: 0, transform: "translateX(-50px)" }}
-                    whileInView={{ opacity: 1, transform: "translateX(0)" }}
+                    whileInView={{ opacity: 1, transform: "translateX(0px)" }}
                     transition={{ duration: 0.5 }}
                   >
                     <span className={styles.arrow}>&gt; </span>
