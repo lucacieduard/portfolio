@@ -3,24 +3,24 @@ import {
   faHtml5,
   faJs,
   faReact,
+  faSass,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const workContent = [
-  ,
   {
     id: 2,
-    title: "Inoesy Project V1",
-    images: ["/grafice1.webp", "/grafice2.webp", "/grafice3.webp"],
+    title: "MORENT - Rental Car APP (in progress)",
+    images: ["/car_1.webp", "/car_2.webp", "/car_3.webp"],
     tehnologies: [
       { icon: <FontAwesomeIcon icon={faHtml5} />, name: "HTML" },
-      { icon: <FontAwesomeIcon icon={faCss3} />, name: "CSS" },
-      { icon: <FontAwesomeIcon icon={faJs} />, name: "JavaScript" },
+      { icon: <FontAwesomeIcon icon={faSass} />, name: "Sass" },
+      { icon: <FontAwesomeIcon icon={faJs} />, name: "TypeScript" },
       { icon: <FontAwesomeIcon icon={faReact} />, name: "React" },
     ],
-    description: "",
-    liveLink: "https://grafice.eduardlucaci.ro/",
-    githubLink: "https://github.com/lucacieduard/aqi-project-frontend",
+    description: "TS & React & Sass Project",
+    liveLink: "https://car-rental.eduardlucaci.ro/",
+    githubLink: "https://github.com/lucacieduard/CarRent-APP",
   },
   {
     id: 1,
@@ -35,6 +35,20 @@ const workContent = [
     description: "",
     liveLink: "https://weather-app.eduardlucaci.ro/",
     githubLink: "https://github.com/lucacieduard/weather-app",
+  },
+  {
+    id: 2,
+    title: "Inoesy Project V1",
+    images: ["/grafice1.webp", "/grafice2.webp", "/grafice3.webp"],
+    tehnologies: [
+      { icon: <FontAwesomeIcon icon={faHtml5} />, name: "HTML" },
+      { icon: <FontAwesomeIcon icon={faCss3} />, name: "CSS" },
+      { icon: <FontAwesomeIcon icon={faJs} />, name: "JavaScript" },
+      { icon: <FontAwesomeIcon icon={faReact} />, name: "React" },
+    ],
+    description: "",
+    liveLink: "https://grafice.eduardlucaci.ro/",
+    githubLink: "https://github.com/lucacieduard/aqi-project-frontend",
   },
 ];
 

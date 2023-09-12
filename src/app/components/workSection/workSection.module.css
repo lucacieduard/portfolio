@@ -64,6 +64,10 @@
   color: #f7f3f3;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 716px) {
   .project {
     margin: 0 auto;
