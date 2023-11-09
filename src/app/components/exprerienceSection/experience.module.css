@@ -80,6 +80,10 @@
     align-items: center;
     gap: 1.25rem;
   }
+
+  .catContainer:hover {
+    cursor: pointer;
+  }
   .companyInfo {
     display: flex;
     flex-direction: column;
