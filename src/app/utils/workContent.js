@@ -10,8 +10,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const workContent = [
   {
     id: 2,
+    title: "MORENT - CMS (in progress)",
+    images: ["/cms_1.webp", "/cms_2.webp", "/cms_3.webp", "/cms_4.webp"],
+    tehnologies: [
+      { icon: <FontAwesomeIcon icon={faHtml5} />, name: "HTML" },
+      { icon: <FontAwesomeIcon icon={faSass} />, name: "Sass" },
+      { icon: <FontAwesomeIcon icon={faJs} />, name: "TypeScript" },
+      { icon: <FontAwesomeIcon icon={faReact} />, name: "React" },
+    ],
+    description: "CMS for MORENT APP",
+    liveLink: "https://car-rental.eduardlucaci.ro/admin?test=true",
+    githubLink: "https://github.com/lucacieduard/CarRent-APP",
+  },
+  {
+    id: 2,
     title: "MORENT - Rental Car APP (in progress)",
-    images: ["/car_1.webp", "/car_2.webp", "/car_3.webp"],
+    images: ["/car_1.webp", "/car_2.webp", "/car_3.webp", "/cms_5.webp"],
     tehnologies: [
       { icon: <FontAwesomeIcon icon={faHtml5} />, name: "HTML" },
       { icon: <FontAwesomeIcon icon={faSass} />, name: "Sass" },
