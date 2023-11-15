@@ -19,7 +19,7 @@ const workContent = [
       { icon: <FontAwesomeIcon icon={faReact} />, name: "React" },
     ],
     description: "CMS for MORENT APP",
-    liveLink: "https://car-rental.eduardlucaci.ro/admin?test=true",
+    liveLink: "https://car-rental.eduardlucaci.ro/login?redirect=true",
     githubLink: "https://github.com/lucacieduard/CarRent-APP",
   },
   {
