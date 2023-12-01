@@ -4,11 +4,13 @@ import styles from "./experience.module.css";
 import { ThemeContext } from "@/app/context/ThemeContext";
 import { useInView, motion } from "framer-motion";
 import content from "@/app/utils/experienceContent";
+import jobs from "@/app/utils/jobsContent";
 import Link from "next/link";
 
-export const ExperienceSection = () => {
+export const ExperienceSection = (props) => {
   const { toggle, mode } = useContext(ThemeContext);
-  const [activeInfo, setActiveInfo] = useState(1);
+  const [activeInfo, setActiveInfo] = useState(0);
+  const [experientceInfo, setExperienceInfo] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -37,34 +39,57 @@ export const ExperienceSection = () => {
       }}
       viewport={{ once: true, amount: 0.8 }}
     >
-      <h2 className={styles.sectionTitle}>Courses</h2>
+      <h2 className={styles.sectionTitle}>{props.title}</h2>
       <div className={styles.experienceContainer}>
         <div className={styles.companyContainer}>
-          {content.map((item) => {
-            return (
-              <div
-                key={item.id}
-                onClick={() => setActiveInfo(item.id)}
-                className={styles.catContainer}
-                style={activeInfo === item.id ? active : {}}
-              >
-                <div className={`${styles.companyLogo}`}>{item.icon}</div>
-                <div className={`${styles.companyInfo}  ${styles.hide}`}>
-                  <span className={`${styles.companyName}`}>
-                    {item.companyName}
-                  </span>
-                  <span className={styles.companyPosition}>
-                    {item.companyPosition}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
+          {props.title === "Experience"
+            ? jobs.map((item) => {
+                return (
+                  <div
+                    key={item.id}
+                    onClick={() => setExperienceInfo(item.id)}
+                    className={styles.catContainer}
+                    style={activeInfo === item.id ? active : {}}
+                  >
+                    <div className={`${styles.companyLogo}`}>{item.icon}</div>
+                    <div className={`${styles.companyInfo}  ${styles.hide}`}>
+                      <span className={`${styles.companyName}`}>
+                        {item.companyName}
+                      </span>
+                      <span className={styles.companyPosition}>
+                        {item.companyPosition}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })
+            : content.map((item) => {
+                return (
+                  <div
+                    key={item.id}
+                    onClick={() => setActiveInfo(item.id)}
+                    className={styles.catContainer}
+                    style={activeInfo === item.id ? active : {}}
+                  >
+                    <div className={`${styles.companyLogo}`}>{item.icon}</div>
+                    <div className={`${styles.companyInfo}  ${styles.hide}`}>
+                      <span className={`${styles.companyName}`}>
+                        {item.companyName}
+                      </span>
+                      <span className={styles.companyPosition}>
+                        {item.companyPosition}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
         </div>
         <div className={styles.descripiptionContainer}>
           <div className={styles.descriptionHeader}>
             <p className={styles.title}>
-              {content[activeInfo].position}{" "}
+              {props.title === "Experience"
+                ? jobs[experientceInfo].position
+                : content[activeInfo].position}{" "}
               <span
                 style={{
                   color: "#2563EB",
@@ -72,28 +97,58 @@ export const ExperienceSection = () => {
                   fontWeight: "400",
                 }}
               >
-                {content[activeInfo].subCompany}
+                {props.title === "Experience"
+                  ? jobs[experientceInfo].subCompany
+                  : content[activeInfo].subCompany}
               </span>
             </p>
-            <p className={styles.dates}>{content[activeInfo].dates}</p>
+            <p className={styles.dates}>
+              {props.title === "Experience"
+                ? jobs[experientceInfo].dates
+                : content[activeInfo].dates}
+            </p>
           </div>
           <div className={styles.descriptionContent}>
             <ul className={styles.list}>
-              {content[activeInfo].sentences.length > 0 &&
-                content[activeInfo].sentences.map((prop) => {
-                  return (
-                    <motion.li
-                      className={styles.listItem}
-                      key={prop}
-                      initial={{ opacity: 0, transform: "translateX(-50px)" }}
-                      whileInView={{ opacity: 1, transform: "translateX(0px)" }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <span className={styles.arrow}>&gt; </span>
-                      <span>{prop}</span>
-                    </motion.li>
-                  );
-                })}
+              {props.title === "Experience"
+                ? jobs[experientceInfo].sentences.length > 0 &&
+                  jobs[experientceInfo].sentences.map((prop) => {
+                    return (
+                      <motion.li
+                        className={styles.listItem}
+                        key={prop}
+                        initial={{ opacity: 0, transform: "translateX(-50px)" }}
+                        whileInView={{
+                          opacity: 1,
+                          transform: "translateX(0px)",
+                        }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
+                      >
+                        <span className={styles.arrow}>&gt; </span>
+                        <span>{prop}</span>
+                      </motion.li>
+                    );
+                  })
+                : content[activeInfo].sentences.length > 0 &&
+                  content[activeInfo].sentences.map((prop) => {
+                    return (
+                      <motion.li
+                        className={styles.listItem}
+                        key={prop}
+                        initial={{ opacity: 0, transform: "translateX(-50px)" }}
+                        whileInView={{
+                          opacity: 1,
+                          transform: "translateX(0px)",
+                        }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
+                      >
+                        <span className={styles.arrow}>&gt; </span>
+                        <span>{prop}</span>
+                      </motion.li>
+                    );
+                  })}
 
               {content[activeInfo].sentences.length === 0 && (
                 <>
@@ -102,6 +157,7 @@ export const ExperienceSection = () => {
                     initial={{ opacity: 0, transform: "translateX(-50px)" }}
                     whileInView={{ opacity: 1, transform: "translateX(0px)" }}
                     transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
                   >
                     <span className={styles.arrow}>&gt; </span>
                     <span>
@@ -123,6 +179,7 @@ export const ExperienceSection = () => {
                     </span>
                   </motion.li>
                   <motion.li
+                    viewport={{ once: true }}
                     initial={{ opacity: 0, transform: "translateX(-50px)" }}
                     whileInView={{ opacity: 1, transform: "translateX(0px)" }}
                     transition={{ duration: 0.5 }}
@@ -146,6 +203,7 @@ export const ExperienceSection = () => {
                     </span>
                   </motion.li>
                   <motion.li
+                    viewport={{ once: true }}
                     initial={{ opacity: 0, transform: "translateX(-50px)" }}
                     whileInView={{ opacity: 1, transform: "translateX(0px)" }}
                     transition={{ duration: 0.5 }}

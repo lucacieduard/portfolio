@@ -9,7 +9,8 @@ export default function Home() {
     <>
       <Analytics />
       <Hero />
-      <ExperienceSection />
+      <ExperienceSection title="Experience" />
+      <ExperienceSection title="Courses" />
       <WorkSection />
       <Contact />
     </>
