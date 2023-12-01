@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const workContent = [
   {
     id: 2,
-    title: "MORENT - CMS (in progress)",
+    title: "MORENT - CMS",
     images: ["/cms_1.webp", "/cms_2.webp", "/cms_3.webp", "/cms_4.webp"],
     tehnologies: [
       { icon: <FontAwesomeIcon icon={faHtml5} />, name: "HTML" },
@@ -24,7 +24,7 @@ const workContent = [
   },
   {
     id: 2,
-    title: "MORENT - Rental Car APP (in progress)",
+    title: "MORENT - Rental Car APP",
     images: ["/car_1.webp", "/car_2.webp", "/car_3.webp", "/cms_5.webp"],
     tehnologies: [
       { icon: <FontAwesomeIcon icon={faHtml5} />, name: "HTML" },
